@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Click Events</title>
+    <title>Ski Hills Sask</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -20,15 +20,31 @@
     </style>
     <script>       
             
-      let map;
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 50.445, lng: -104.619 },
-          zoom: 12,
+     function initMap() {
+        const myLatlng = { lat: -25.363, lng: 131.044 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 4,
+        center: myLatlng,
         });
-      }
-     </script>
+    const marker = new google.maps.Marker({
+        position: myLatlng,
+        map,
+        title: "Click to zoom",
+         });
+
+  map.addListener("center_changed", () => {
+    // 3 seconds after the center of the map has changed, pan back to the
+    // marker.
+    window.setTimeout(() => {
+      map.panTo(marker.getPosition());
+    }, 3000);
+  });
+  marker.addListener("click", () => {
+    map.setZoom(8);
+    map.setCenter(marker.getPosition());
+  });
+}
+    </script>
   </head>
   <body>
     <div id="map"></div>
