@@ -22,10 +22,12 @@
      function initMap() {
         const myLatlng = { lat: 52.9399, lng: -106.4509 };
         const MissionRidge = { lat:50.7551 , lng:-103.7818 };
-        const TableMnt = { lat:52.8148 , lng:-108.6044 };
+        const TableMtn = { lat:52.8148 , lng:-108.6044 };
         const Wapiti = { lat:53.2343 , lng:-104.4582 };
+        const SkiTimber = { lat:53.7880 , lng:-106.9823 }
+        const DuckMtn = { lat: 51.5614 , lng:-101.6077 }
         const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 6,
+        zoom: 7,
         center: myLatlng,
             });
     const markerMR = new google.maps.Marker({
@@ -34,7 +36,7 @@
         title: "Mission Ridge",
         });
     const markerTM = new google.maps.Marker({
-        position: TableMnt,
+        position: TableMtn,
         map,
         title: "Table Mountain",
         });
@@ -43,7 +45,16 @@
         map,
         title: "Wapiti Valley",
         });
-
+    const markerST = new google.maps.Marker({
+        position: SkiTimber,
+        map,
+        title: "Ski Timber Ridge",
+        });
+    const markerDM = new google.maps.Marker({
+        position: DuckMtn,
+        map,
+        title: "Duck Mountain Ski Area",
+        });
     markerMR.addListener("click", () => {
         map.setZoom(14);
         map.setCenter(markerMR.getPosition());
@@ -55,6 +66,14 @@
     markerW.addListener("click", () => {
         map.setZoom(14);
         map.setCenter(markerW.getPosition());
+        });
+    markerST.addListener("click", () => {
+        map.setZoom(14);
+        map.setCenter(markerST.getPosition());
+        });
+    markerDM.addListener("click", () => {
+        map.setZoom(14);
+        map.setCenter(markerDM.getPosition());
         });
      }
     </script>
