@@ -22,7 +22,7 @@
      function initMap() {
         const myLatlng = { lat: 50.4452, lng: -104.6189 };
         const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
+        zoom: 6,
         center: myLatlng,
         });
     const marker = new google.maps.Marker({
@@ -33,7 +33,7 @@
 
 
     marker.addListener("click", () => {
-        map.setZoom(8);
+        map.setZoom(10);
         map.setCenter(marker.getPosition());
         });
      }
