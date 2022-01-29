@@ -18,7 +18,17 @@
         padding: 0;
       }
     </style>
-    <script src="./index.js"></script>
+    <script       
+            
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 50.445, lng: -104.619 },
+          zoom: 12,
+        });
+      }
+     </script>
   </head>
   <body>
     <div id="map"></div>
