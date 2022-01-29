@@ -26,6 +26,7 @@
         const Wapiti = { lat:53.2343 , lng:-104.4582 };
         const SkiTimber = { lat:53.7880 , lng:-106.9823 }
         const DuckMtn = { lat: 51.5614 , lng:-101.6077 }
+        const image ="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
         const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 7,
         center: myLatlng,
@@ -34,26 +35,31 @@
         position: MissionRidge,
         map,
         title: "Mission Ridge",
+        icon:image
         });
     const markerTM = new google.maps.Marker({
         position: TableMtn,
         map,
         title: "Table Mountain",
+        icon:image
         });
     const markerW = new google.maps.Marker({
         position: Wapiti,
         map,
         title: "Wapiti Valley",
+        icon:image
         });
     const markerST = new google.maps.Marker({
         position: SkiTimber,
         map,
         title: "Ski Timber Ridge",
+        icon:image
         });
     const markerDM = new google.maps.Marker({
         position: DuckMtn,
         map,
         title: "Duck Mountain Ski Area",
+        icon:image
         });
     markerMR.addListener("click", () => {
         map.setZoom(14);
