@@ -11,8 +11,7 @@
       }
 
       /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
+      html,body {
         height: 100%;
         margin: 0;
         padding: 0;
@@ -21,7 +20,7 @@
     <script>       
             
      function initMap() {
-        const myLatlng = { lat: 50.4452, lng: 104.6189 };
+        const myLatlng = { lat: 50.4452, lng: -104.6189 };
         const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 4,
         center: myLatlng,
@@ -33,11 +32,11 @@
          });
 
 
-  marker.addListener("click", () => {
-    map.setZoom(8);
-    map.setCenter(marker.getPosition());
-  });
-}
+    marker.addListener("click", () => {
+        map.setZoom(8);
+        map.setCenter(marker.getPosition());
+        });
+     }
     </script>
   </head>
   <body>
@@ -49,4 +48,5 @@
       async
     ></script>
   </body>
+</html>
 </html>
