@@ -34,27 +34,31 @@
         position: MissionRidge,
         map,
         title: "Mission Ridge",
+        label: "MR"
         });
     const markerTM = new google.maps.Marker({
         position: TableMtn,
         map,
         title: "Table Mountain",
+        label: "TM"
         });
     const markerW = new google.maps.Marker({
         position: Wapiti,
         map,
         title: "Wapiti Valley",
+        label: "WV"
         });
     const markerST = new google.maps.Marker({
         position: SkiTimber,
         map,
         title: "Ski Timber Ridge",
-        label: "Ski Timber Ridge"
+        label: "STR"
         });
     const markerDM = new google.maps.Marker({
         position: DuckMtn,
         map,
         title: "Duck Mountain Ski Area",
+        label: "DMSA"
         });
     markerMR.addListener("click", () => {
         map.setZoom(14);
