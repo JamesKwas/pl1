@@ -18,7 +18,7 @@
       }
     </style>
     <script>       
-    // Simple Click code taken from https://developers.google.com/maps/documentation/javascript/examples/event-simple#maps_event_simple-javascript        
+            
      function initMap() {
         const myLatlng = { lat: 52.9399, lng: -106.4509 };
         const MissionRidge = { lat:50.7551 , lng:-103.7818 };
@@ -75,13 +75,16 @@
     markerST.addListener("click", () => {
         map.setZoom(14);
         map.setCenter(markerST.getPosition());
-
         });
     markerDM.addListener("click", () => {
         map.setZoom(14);
         map.setCenter(markerDM.getPosition());
         });
      }
+     map.addListener("click", () => {
+        map.setZoom(7);
+        map.setCenter(myLatlng.getPosition());
+        });
     </script>
   </head>
   <body>
